@@ -16,6 +16,11 @@ def read_root():
     return {"Hello": "World"}
 
 
+@app.get("/welcome")
+def welcome():
+    return {"Welcome to my shopping cart!"}
+
+
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
